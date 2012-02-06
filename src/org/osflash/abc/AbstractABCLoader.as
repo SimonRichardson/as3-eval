@@ -56,6 +56,8 @@ package org.osflash.abc
 
 			_domain = null != domain ? domain : ApplicationDomain.currentDomain;
 			_context = new LoaderContext(false, _domain, null);
+			_context.allowCodeImport = true;
+			_context.allowLoadBytesCodeExecution = true;
 		}
 
 		protected function loadBytes(data : ByteArray) : void
