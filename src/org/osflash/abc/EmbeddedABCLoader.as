@@ -1,13 +1,15 @@
 package org.osflash.abc
 {
 	import com.codeazur.as3swf.SWFData;
-	import com.codeazur.as3swf.tags.TagDoEmbeddedABC;
+	import com.codeazur.as3swf.tags.TagDoABC;
 	import com.codeazur.as3swf.tags.TagEnd;
 	import com.codeazur.as3swf.tags.TagShowFrame;
+
+	import org.osflash.abc.providers.IABCProvider;
+
 	import flash.errors.IllegalOperationError;
 	import flash.system.ApplicationDomain;
 	import flash.utils.ByteArray;
-	import org.osflash.abc.providers.IABCProvider;
 
 
 
@@ -44,7 +46,7 @@ package org.osflash.abc
 				const byteArray : ByteArray = binaries[i];
 				byteArray.position = 0;
 				
-				swf.tags.push(TagDoEmbeddedABC.create(byteArray));
+				swf.tags.push(TagDoABC.create(byteArray));
 			}
 			
 			swf.tags.push(new TagShowFrame());
